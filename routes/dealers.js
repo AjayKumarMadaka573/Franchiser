@@ -9,7 +9,6 @@ const session = require('express-session');
 const dotenv = require('dotenv');
 const moment = require('moment-timezone');
 const Grid = require('gridfs-stream');
-const {GridFsStorage} = require('multer-gridfs-storage');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const { MongoClient, GridFSBucket } = require('mongodb');
@@ -20,7 +19,7 @@ const router = express.Router();
 
 router.use(express.json());
 
-let MONGO_URI = "mongodb://localhost:27017/Franchiser";
+let MONGO_URI = "mongodb+srv://AjayKumarMadaka:0WhDPq3qPMayV61i@cluster0.ohtfb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Session
 router.use(session({

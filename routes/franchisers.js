@@ -4,13 +4,13 @@ const FranchiserMoney = require('../models/FranchiserMoney');
 const Application = require('../models/Application');
 const session = require('express-session');
 const Grid = require('gridfs-stream');
-const {GridFsStorage} = require('multer-gridfs-storage');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const { MongoClient, GridFSBucket } = require('mongodb');
 const router = express.Router();
 const { Readable } = require('stream');
 const path = require('path');
+
 
 router.use(express.json());
 
@@ -237,3 +237,5 @@ router.get('/Franchiser',async (req,res)=>{
 });
 
 module.exports = router;
+
+
