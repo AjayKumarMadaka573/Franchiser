@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body class="bg-[url('Login_BG.jpg')] bg-cover bg-center h-screen overflow-hidden">  
+        <div class="login bg-gray-900 rounded p-8 mt-32 w-4/5 md:max-w-sm lg:max-w-md lg:mt-12 mx-auto">
+        
+            <div class="flex items-center justify-center">
+                <h2 class="text-blue-500 text-3xl font-bold">Login</h2>
+            </div>
+            <div class=" flex flex-col items-center w-full h-full justify-center">
+                <input type="text" placeholder="Name" id="dealer-name" class="name text-gray-400 rounded w-60 lg:w-80 h-12 mt-4 mb-8 p-4 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+                
+                <div class="relative w-80 h-12 m-2">
+                    <input type="password" placeholder="Password" id="dealer-pss" class="pss text-gray-400 rounded w-60 ml-10 lg:w-full lg:ml-0 h-full p-4 pr-12 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 h-6 absolute top-1/2 right-12 lg:right-4 transform -translate-y-1/2 cursor-pointer hidden" id="password-close" onclick="handlePassword()">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 h-6 absolute top-1/2 right-12 lg:right-4 transform -translate-y-1/2 cursor-pointer" id="password-open" onclick="handlePassword()">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+                <button class="bg-blue-500 border-2 border-blue-600 hover:bg-blue-800 transition ease-out duration-500 rounded mt-4 text-white text-lg w-20 h-10" id="dealer-login">Login</button>
+                <p class="dealer-already text-black mx-auto text-sm mt-10 text-xl text-gray-300"> <span class="text-gray-300 text-xl">No account?</span> <button class="text-blue-600 text-lg underline" onclick="handleSignup()">Sign up</button>
+            </div>
+    
+        </div>
+    
+            <div class="dealer-signup bg-gray-900 mx-auto mt-16 w-4/5 md:max-w-sm lg:max-w-md p-4 pt-8 justify-content flex flex-col max-w-md hidden">
+                <h2 class="text-blue-500 text-4xl font-bold mx-auto">Hello Dealer</h2>
+                <input type="text" placeholder="Name" id="dealer-signup-name" class="dealer-name rounded-lg w-60  lg:w-80 h-12 mt-8 mb-8 ml-2 lg:ml-12 p-4 text-gray-400 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+                
+ 
+                <input type="mail" placeholder="Email" id="dealer-signup-mail" class="dealer-mail rounded-lg w-60  lg:w-80 h-12 mt-4 mb-8 ml-2 lg:ml-12 p-4 text-gray-400 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+                <div class="relative">
+                    <input type="password" placeholder="Password" id="dealer-signup-pss" class="dealer-pss rounded-lg w-60  lg:w-80 h-12 mt-4 mb-8 ml-2 lg:ml-12 p-4 text-gray-400 border-2 border-gray-700 bg-transparent placeholder-gray-700"/>
+            
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 absolute right-4 bottom-8 lg:right-16 transform -translate-y-1/2 cursor-pointer hidden" id="password-close" onclick="handlePassword()">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                    </svg>
+                    
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 absolute right-4 lg:right-16 bottom-8 transform -translate-y-1/2 cursor-pointer" id="password-open" onclick="handlePassword()">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+                <div class="ml-3 sm:ml-20 w-52 lg:w-3/5 flex flex-col items-center">
+                    <label for="profile-pic" class="block m-4 text-gray-300 font-bold">Upload Profile:</label>
+                    <input type="file" id="profile-pic" class="border bg-gray-400 rounded bg-transparent w-full p-2 mb-2 placeholder-gray-700 border-2 border-gray-700 text-gray-300" />
+                </div>
+                <button class="bg-blue-600 text-white p-2 mx-auto rounded w-20 h-10 m-8 hover:bg-blue-700 transition ease-out duration-500" id="dealer-signup">Sign up</button>
+                <p class="dealer-already text-gray-300 mx-auto text-lg mb-4 lg:text-xl">Already have an account? <button class="text-blue-600 underline" onclick="handleLogin()">Login</button>
+            </div>    
+
+
+            <script>
+      const passwordFields = document.querySelectorAll("input[type='password']");
+    const pssIconsOpen = document.querySelectorAll("#password-open");
+    const pssIconsClose = document.querySelectorAll("#password-close");
+
+    function handlePassword(index) {
+        const passwordField = passwordFields[index];
+        const openIcon = pssIconsOpen[index];
+        const closeIcon = pssIconsClose[index];
+
+        if (passwordField.type === "password") {
+            openIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+            passwordField.type = "text";
+        } else {
+            closeIcon.classList.add("hidden");
+            openIcon.classList.remove("hidden");
+            passwordField.type = "password";
+        }
+    }
+
+    pssIconsOpen.forEach((icon, index) => {
+        icon.addEventListener("click", () => handlePassword(index));
+    });
+
+    pssIconsClose.forEach((icon, index) => {
+        icon.addEventListener("click", () => handlePassword(index));
+    });
+
+                const signup=document.querySelector(".dealer-signup");
+                const login=document.querySelector(".login");
+                    function handleSignup(){
+                            if(signup.classList.contains("hidden")){
+                                signup.classList.remove("hidden");
+                                login.classList.add("hidden")
+                            }
+                            else{
+                                signup.classList.add("hidden");
+                                login.classList.remove("hidden")
+                            }
+                    }
+                    function handleLogin(){
+                        if(login.classList.contains("hidden")){
+                            login.classList.remove("hidden");
+                            signup.classList.add("hidden");
+                
+                        }
+                        else{
+                            signup.classList.remove("hidden");
+                                login.classList.add("hidden");
+                        }
+                    }
+                </script>
+
+                <script src="SignupLogin.js"></script>
+
+</body>
+</html>

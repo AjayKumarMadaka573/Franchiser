@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scroll Progress Indicator</title>
+   <link rel="stylesheet" href="styles.css">
+    <style>
+      
+    </style>
+</head>
+<body class="bg-black">
+
+    <div class="h-[2000px] relative">
+        <h1 class="text-2xl font-bold p-8">Vertical Scroll Progress Indicator</h1>
+        <p class="p-8">Scroll down to see the progress bar in action!</p>
+    </div>
+   
+    <div class="progress-bar sticky">
+        <div class="progress-bar-inner bg-blue-600"></div>
+    </div>
+
+    <script>
+        // Function to update the height of the progress bar based on scroll position
+        function updateProgressBar() {
+            const progressBarInner = document.querySelector('.progress-bar-inner');
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = document.documentElement.scrollTop;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            progressBarInner.style.height = `${scrollPercent}%`;
+        }
+
+        // Update progress bar on scroll
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Initial update in case the page is loaded with a scroll
+        updateProgressBar();
+    </script>
+</body>
+</html>

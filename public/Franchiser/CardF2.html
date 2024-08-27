@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card 2</title>
+   <link rel="stylesheet" href="styles.css">
+    <style>
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+     background-color:#111827;
+}
+
+.flip-card-back {
+    background-color:#111827;
+  color: white;
+  transform: rotateY(180deg);
+}
+    </style>
+</head>
+<body class="bg-black flex justify-center items-center h-screen">
+
+<div>
+
+</div>
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front flex flex-col items-center bg-opacity-60">
+            <img class="rounded-full h-[6rem] w-[6rem]" src="profile_ntr.jpg" alt="">
+            <p class="text-xl font-semibold">Somesh</p>
+            <p class="text-sm mt-5">Hello I am interested in buying your franchise</p>
+        </div>
+        <div class="flip-card-back">
+           <div class="flex flex-col justify-around items-center">
+            <div>
+                <button class="bg-green-700 hover:bg-green-900 transition ease-out duration-300 p-2 rounded">Approve</button>
+            </div>
+            <div class="mt-5">
+                <button class="bg-red-700 hover:bg-red-900 transition ease-out duration-300 p-2 rounded">Reject</button>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @layer utilities {
+          
+            .scrollbar-none::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-none {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[url('Login_BG.jpg')] bg-cover bg-center h-screen lg:overflow-hidden">  
+    <div class="login bg-gray-900 rounded p-8 mt-32 w-4/5 md:max-w-sm lg:max-w-md lg:mt-12 mx-auto">
+        
+        <div class="flex items-center justify-center">
+            <h2 class="text-blue-500 text-3xl font-bold">Login</h2>
+        </div>
+        <div class=" flex flex-col items-center w-full h-full justify-center">
+            <input type="text" placeholder="Name" id="franchiser-lname" class="name text-gray-400 rounded w-60 lg:w-80 h-12 mt-4 mb-8 p-4 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+            
+            <div class="relative w-80 h-12 m-2">
+                <input type="password" placeholder="Password" id="franchiser-lpss" class="pss text-gray-400 rounded w-60 ml-10 lg:w-full lg:ml-0 h-full p-4 pr-12 border-2 border-gray-700 bg-transparent placeholder-gray-700" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 h-6 absolute top-1/2 right-12 lg:right-4 transform -translate-y-1/2 cursor-pointer hidden" id="password-close" onclick="handlePassword()">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 h-6 absolute top-1/2 right-12 lg:right-4 transform -translate-y-1/2 cursor-pointer" id="password-open" onclick="handlePassword()">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+            </div>
+            <button class="bg-blue-500 border-2 border-blue-600 hover:bg-blue-800 transition ease-out duration-500 rounded mt-4 text-white text-lg w-20 h-10" id="Franchiser-login">Login</button>
+            <p class="dealer-already text-black mx-auto text-sm mt-10 text-xl text-gray-300"> <span class="text-gray-300 text-xl">No account?</span> <button class="text-blue-600 text-lg underline" onclick="handleSignup()">Sign up</button>
+        </div>
+
+    </div>
+    <div class="franchiser-right bg-gray-900 flex flex-col items-center w-4/5 md:w-1/2 lg:w-1/2 mx-auto hidden h-screen overflow-y-scroll scrollbar-none">
+        <h2 class="text-blue-500 font-bold text-5xl m-4 py-8">Hello Franchiser</h2>
+
+        <input type="text" placeholder="Name" id="franchiser-signup-name" class="border border-gray-300 text-gray-400 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+        <input type="email" placeholder="Email" id="franchiser-signup-mail" class="border border-gray-300 text-gray-400 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+
+        <div class="relative w-52 lg:w-3/5">
+            <input type="password" id="franchiser-pss" placeholder="Password" class="border border-gray-300 text-gray-400 rounded bg-transparent w-full p-2 mt-5 mb-5 placeholder-gray-700 border-2 border-gray-700" />
+            
+            
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 absolute top-1/2 transform -translate-y-1/2 cursor-pointer hidden right-4" id="password-close" onclick="handlePassword()">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+            </svg>
+            
+            
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 w-6 absolute top-1/2 transform -translate-y-1/2 cursor-pointer right-4 lg:right-4" id="password-open" onclick="handlePassword()">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+        </div>
+        
+
+        <h2 class="text-gray-400 underline font-semibold text-lg">About your business</h2>
+
+        <select name="options" id="franchiser-business-category" class="text-gray-600 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5  border-2 border-gray-700">
+            <option value="Type of business">Select Type of Business</option>
+            <option value="Food">Food</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Education">Education</option>
+        </select>
+
+        <input type="number" placeholder="Number of Franchises" id="franchies-number" class="text-gray-400 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+        <input type="number" placeholder="Company's Average Turnover" id="franchise-average-turnover" class="text-gray-400 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+        <input type="text" placeholder="Headquarters Address" id="franchise-address" class="text-gray-400 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+        <input type="number" placeholder="Average Stock" id="franchise-average-stock" class="text-gray-400 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+        <input type="number" placeholder="Average Price Per Month" id="franchies-average-month-price" class="text-gray-400 border border-gray-300 rounded bg-transparent w-52 lg:w-3/5 p-2 m-5 placeholder-gray-700 border-2 border-gray-700" />
+
+        <div class="w-52 lg:w-3/5">
+            <label for="company-logo" class="block m-4 text-gray-300 font-bold">Company Brand Logo:</label>
+            <input type="file" id="company-logo" class="border bg-gray-400 rounded bg-transparent w-full p-2 mb-2 placeholder-gray-700 border-2 border-gray-700 text-gray-300" />
+        </div>
+
+        <div class="w-52 lg:w-3/5">
+            <label for="documents" class="block m-4 text-gray-300 font-bold">Upload Documents:</label>
+            <input type="file" id="documents" id="franchies-doc" class="border bg-gray-400 rounded bg-transparent w-full p-2 mb-2 placeholder-gray-700 border-2 border-gray-700 text-gray-300" />
+        </div>
+
+        <button class="bg-blue-500 text-white p-2 rounded w-20 h-10 m-8 hover:bg-blue-800 transition ease-out duration-500 rounded text-white text-lg" id="Franchiser-signup">Sign up</button>
+  <p class="lg:text-xl text-gray-300 lg:mt-4 mb-4">Already have an account? <button class="text-blue-600 underline" onclick="handleLogin()">Login</button></p>
+
+    </div> 
+
+<script src="SignUpLoginF.js"></script>
+<script>
+
+    const passwordFields = document.querySelectorAll("input[type='password']");
+    const pssIconsOpen = document.querySelectorAll("#password-open");
+    const pssIconsClose = document.querySelectorAll("#password-close");
+
+    function handlePassword(index) {
+        const passwordField = passwordFields[index];
+        const openIcon = pssIconsOpen[index];
+        const closeIcon = pssIconsClose[index];
+
+        if (passwordField.type === "password") {
+            openIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+            passwordField.type = "text";
+        } else {
+            closeIcon.classList.add("hidden");
+            openIcon.classList.remove("hidden");
+            passwordField.type = "password";
+        }
+    }
+
+    pssIconsOpen.forEach((icon, index) => {
+        icon.addEventListener("click", () => handlePassword(index));
+    });
+
+    pssIconsClose.forEach((icon, index) => {
+        icon.addEventListener("click", () => handlePassword(index));
+    });
+
+
+const signup=document.querySelector(".franchiser-right");
+const login=document.querySelector(".login");
+    function handleSignup(){
+            if(signup.classList.contains("hidden")){
+                signup.classList.remove("hidden");
+                login.classList.add("hidden")
+            }
+            else{
+                signup.classList.add("hidden");
+                login.classList.remove("hidden")
+            }
+    }
+    function handleLogin(){
+        if(login.classList.contains("hidden")){
+            login.classList.remove("hidden");
+            signup.classList.add("hidden");
+
+        }
+        else{
+            signup.classList.remove("hidden");
+                login.classList.add("hidden");
+        }
+    }
+</script>
+</body>
+</html>

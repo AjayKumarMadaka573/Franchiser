@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900">
+    <header class="relative w-screen h-[5rem] bg-gray-800 flex items-center text-gray-300 text-xl font-semibold">        
+        <div class="ml-10 w-[15%]">
+            <h1 class="text-3xl">Franchiser</h1>
+        </div>
+        <div class="absolute items-center left-1 block sm:hidden" id="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+              </svg>
+              
+        </div>
+        <div class="opacity-0 sm:opacity-100 absolute top-20 sm:relative sm:top-0 justify-center sm:justify-around w-[100%] sm:w-[40%] bg-gray-600 sm:bg-gray-700" id="menu">
+            <ul class="flex flex-col sm:flex-row justify-center sm:justify-around w-full sm:items-center  border-gray-400">
+                <li class="px-4 py-2 hover:bg-blue-800 transition ease-out duration-300 cursor-pointer border-b-[0.1rem] border-t-2 border-gray-400 sm:border-b-0 sm:border-t-0">Home</li>
+                <li class="px-4 py-2 hover:bg-blue-800 transition ease-out duration-300 cursor-pointer border-b-[0.1rem] border-gray-400 sm:border-b-0">View</li>
+                <li class="px-4 py-2 hover:bg-blue-800 transition ease-out duration-300 cursor-pointer border-b-[0.1rem] border-gray-400 sm:border-b-0">About Us</li>
+                <li class="px-4 py-2 hover:bg-blue-800 transition ease-out duration-300 cursor-pointer border-b-[0.1rem] border-gray-400 sm:border-b-0">Contact Us</li>
+            </ul>
+        </div>
+        <div class="ml-20 md:ml-0 lg:ml-0 items-center flex justify-end w-[50%] md:w-[40%] lg:w-[40%]">
+            <div class="flex items-center -mr-5">
+                <span class="text-xl sm:text-3xl">25</span>
+                <img class="w-5 sm:w-10" src="../images/Dealer Token.png" alt="">
+            </div>
+            <divc class="ml-10">
+                <img class="w-12 text-gray-300 rounded-full shadow-lg" src="../images/Profile_ntr.jpg" alt="">
+            </div>
+        
+    </header>
+    <script src="nav.js"></script>
+</body>
+</html>
