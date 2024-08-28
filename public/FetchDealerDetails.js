@@ -185,7 +185,7 @@ function UpdateMostPopularFranchisersList(data){
 
       html += `<div class="card flex flex-col  justify-center items-center col-span-1" value="${i}" onclick="LoadApplyPage2(this)">
             <div class="mt-5">
-                <img class="h-[7rem] shadow-lg rounded-full"`
+                <img class="h-[7rem] w-[7rem] shadow-lg rounded-full"`
                 let src = getImgSrc(franchiser.fileId);
                 html+= ` src="${src}" alt="">
             </div>
@@ -235,7 +235,7 @@ function UpdateFranchisersAllList(data){
 
       html += `<div class="card flex flex-col  justify-center items-center col-span-1" value="${ind}" onclick="LoadApplyPage(this)">
             <div class="mt-5">
-                <img class="h-[7rem] shadow-lg rounded-full"`;
+                <img class="h-[7rem] w-[7rem] shadow-lg rounded-full"`;
                  let src = getImgSrc(franchiser.fileId);
                   html+=` src="${src}" alt="">
             </div>
