@@ -296,9 +296,10 @@ async function LoadDealers(){
 
     for(const dealer of result){
         dealers.push(dealer);
+        let src = getImgSrc(dealer.fileId);
         html += `<div class="dealer-card">
             <div class="flex justify-center mt-5 h-auto">
-                <img class="rounded-full h-[6rem] w-[6rem] border-2 border-gray-900" src="profile_ntr.jpg" alt="">
+                <img class="rounded-full h-[6rem] w-[6rem] border-2 border-gray-900" src="${src}" alt="">
             </div>
             <div class="bg-blue-900 h-full mt-[-5%]">
                 <h3 class="flex justify-center font-bold text-gray-200 text-xl p-2">
@@ -346,11 +347,11 @@ async function LoadApplications(){
     let html = ``;
 
     for(const dealer of result){
-
+        let src = getImgSrc(dealer.fileId);
         html += `<div class="flip-card mt-[-10rem] sm:mt-[0rem]">
             <div class="flip-card-inner">
                 <div class="flip-card-front rounded-lg flex flex-col items-center bg-opacity-60">
-                    <img class="rounded-full h-[6rem] w-[6rem]" src="profile_ntr.jpg" alt="">
+                    <img class="rounded-full h-[6rem] w-[6rem]" src="${src}" alt="">
                     <div class="bg-blue-800 w-full h-full p-2 mt-2 shadow-lg">
                         <p class="text-xl font-semibold">${dealer.username}</p>
                         <p class="text-sm mt-5">Hello I am interested in buying your franchise</p>
@@ -582,3 +583,16 @@ async function rejectApplications(dealerUsername){
         alert('Rejectd Successfully');
     }
 }
+
+
+function getImgSrc(fileId){
+  
+    if(fileId){
+      console.log('fileId' + fileId);
+      const imageUrl = `https://franchiser-1.onrender.com/api/franchisers/file/${fileId}`;
+  
+      return imageUrl;
+    }
+  
+    return getRandomElement(myList);
+  }
