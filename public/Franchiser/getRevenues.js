@@ -464,7 +464,7 @@ function loadImage(fileId) {
 
     if(fileId){
     console.log('fileId' + fileId);
-    const imageUrl = `http://localhost:5000/api/franchisers/file/${fileId}`;
+    const imageUrl = `https://franchiser-1.onrender.com/api/franchisers/file/${fileId}`;
 
     const imgElement = document.getElementById('profile-icon');
 
